@@ -2,7 +2,7 @@
 
 Interactive companion to "Beyond the Recovery Rate: Recycling, Backfilling and the
 Quality of Construction and Demolition Waste Recovery across Europe" (Journal of
-Building Engineering). Planned domain: **cdw.electriai.com**.
+Building Engineering). Planned domain: **cwd.electriai.com**.
 
 Static site: one HTML page, vanilla JavaScript, ECharts 5.4.3 from cdnjs, hash
 router with lazy chart initialization. No framework, no build step, no
@@ -50,7 +50,7 @@ then open http://localhost:8765/.
 ## Deploy
 
 Deploy exactly as epr-world: push `index.html`, `css/`, `js/` and `data/` to the
-static host and point cdw.electriai.com at it. `_build_data.py`, `README.md`
+static host and point cwd.electriai.com at it. `_build_data.py`, `README.md`
 and `.gitignore` do not need to ship.
 
 ## Style rules

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CDW Europe: beyond the recovery rate</title>
+<meta name="description" content="Interactive companion to a study of recycling, backfilling and the quality of construction and demolition waste recovery across 30 European countries.">
+<link rel="stylesheet" href="css/style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.3/echarts.min.js"></script>
+</head>
+<body>
+
+<nav id="topnav">
+  <span class="brand">CDW Europe</span>
+  <div class="tabs" id="tabs">
+    <a href="#overview" data-view="overview" class="active">Overview</a>
+    <a href="#map" data-view="map">Europe map</a>
+    <a href="#mix" data-view="mix">Recovery mix</a>
+    <a href="#trend" data-view="trend">Convergence</a>
+    <a href="#construction" data-view="construction">Construction system</a>
+    <a href="#instruments" data-view="instruments">Instruments</a>
+    <a href="#world" data-view="world">World</a>
+    <a href="#profile" data-view="profile" class="cta">Country profile</a>
+  </div>
+</nav>
+
+<main>
+
+<section class="view active" id="view-overview">
+  <header class="hero">
+    <h1>Beyond the recovery rate</h1>
+    <p class="sub">Every European country that treats more than 100 kt of mineral
+       construction and demolition waste meets the 70% recovery target. The rate does not
+       distinguish recycling from backfilling, and the two pathways differ widely between
+       countries. An interactive companion to the study.</p>
+    <div class="stats" id="hero-stats"></div>
+  </header>
+  <div class="finding-grid">
+    <a class="finding" href="#map">
+      <h3>One target, many recovery mixes</h3>
+      <p>All 30 countries are above 70%, yet recycling ranges from 1% to 100% of
+         treated tonnage. Colour the map by recycling, backfilling, recovery or archetype.</p>
+    </a>
+    <a class="finding" href="#mix">
+      <h3>Four archetypes</h3>
+      <p>Recycling led, backfilling led, disposal reliant and transition to recycling.
+         Compare the 2022 mix of every country and follow any trajectory since 2010.</p>
+    </a>
+    <a class="finding" href="#trend">
+      <h3>Convergence on the target, divergence in the mix</h3>
+      <p>EU27 recycling held at 80% from 2014 to 2022 while recovery rose from 87% to 91%.
+         The gain came through backfilling.</p>
+    </a>
+    <a class="finding" href="#construction">
+      <h3>The construction system</h3>
+      <p>Type of construction and building stock age do not separate the archetypes.
+         Primary aggregate abundance does.</p>
+    </a>
+    <a class="finding" href="#instruments">
+      <h3>Instruments in cross section and over time</h3>
+      <p>Coded national instruments do not separate the groups across countries, while
+         landfill taxes introduced within countries coincided with landfill falling.</p>
+    </a>
+    <a class="finding" href="#world">
+      <h3>Europe in the world</h3>
+      <p>Only 89 of 217 countries report a CDW tonnage, and three of them account for 77%
+         of the reported 5.5 Gt.</p>
+    </a>
+    <a class="finding" href="#profile">
+      <h3>Country profile</h3>
+      <p>Pick a country and a comparator and see the recovery mix, ranks, intensities,
+         instruments and aggregate supply side by side.</p>
+    </a>
+  </div>
+</section>
+
+<section class="view" id="view-map">
+  <h2>The European recovery landscape</h2>
+  <p class="lede">Colour the map by recycling share, backfilling share, recovery rate,
+     archetype or the number of coded instruments in force, then click a country for its
+     recovery mix. Countries outside the 30 country sample are grey.</p>
+  <div class="controls" id="map-modes">
+    <button data-mode="recycling" class="active">Recycling share</button>
+    <button data-mode="backfilling">Backfilling share</button>
+    <button data-mode="recovery">Recovery rate</button>
+    <button data-mode="archetype">Archetype</button>
+    <button data-mode="instruments">Instruments in force</button>
+  </div>
+  <div class="map-wrap">
+    <div id="chart-map" class="chart tall"></div>
+    <aside id="country-card"><p class="hint">Click a country on the map.</p></aside>
+  </div>
+  <p class="note">Shares refer to treated non hazardous mineral CDW (Eurostat W121) in
+     2022, or 2020 for Sweden. Malta is drawn as a marker because it is smaller than the
+     base map resolves.</p>
+</section>
+
+<section class="view" id="view-mix">
+  <h2>The recovery mix of 30 countries</h2>
+  <p class="lede">Each bar is the treated mineral CDW of one country in 2022, split into
+     recycling, backfilling, energy recovery and landfill or other disposal. Countries are
+     grouped by archetype and sorted by recycling share; the dashed line marks the 70%
+     recovery target, which recycling and backfilling meet alike.</p>
+  <div id="chart-mix" class="chart xtall"></div>
+  <h3 class="sub">Trajectory of one country, 2010 to 2022</h3>
+  <div class="controls">
+    <label for="mix-country">Country</label>
+    <select id="mix-country"></select>
+  </div>
+  <div id="chart-trajectory" class="chart"></div>
+  <p class="note">Recovery is recycling plus backfilling. Backfilling shares before 2014
+     are partly inferred from the difference between reported recovery and recycling.</p>
+</section>
+
+<section class="view" id="view-trend">
+  <h2>Convergence on the target, divergence in how it is met</h2>
+  <p class="lede">At EU27 level the recycling share was 80% in 2014 and 80% in 2022 while
+     the recovery rate rose from 87% to 91%: the headline gain since 2014 came through
+     backfilling, which grew from 7% to 11% as landfill fell from 13% to 8%. Across
+     countries the spread of landfill shares collapsed while the spread of backfilling
+     shares widened.</p>
+  <div class="chart-row">
+    <div>
+      <h3 class="sub">EU27 recovery mix, 2010 to 2022</h3>
+      <div id="chart-eu27" class="chart"></div>
+    </div>
+    <div>
+      <h3 class="sub">Cross country standard deviation by wave</h3>
+      <div id="chart-sigma" class="chart"></div>
+    </div>
+  </div>
+  <p class="note">Standard deviations are across the 30 core countries in each wave. From
+     2010 to 2022 the SD of recycling fell from 33 to 25 points, landfill from 35 to 7 and
+     backfilling rose from 10 to 24.</p>
+</section>
+
+<section class="view" id="view-construction">
+  <h2>The construction system behind the mix</h2>
+  <p class="lede">The EU27 construction sector generated 862 Mt of waste in 2022, 14% more
+     than in 2010: soils and dredging spoils make up 54%, mineral CDW 35%, and wood,
+     plastics, glass and mixed fractions less than 2% together. Treated tonnage scales one
+     for one with construction value added (elasticity .97). Type of construction, measured
+     as the civil engineering share of turnover, and the age of the building stock do not
+     separate the archetypes. The abundance of primary aggregates does.</p>
+  <h3 class="sub">EU27 construction sector waste by material, 2010 to 2022</h3>
+  <div id="chart-composition" class="chart"></div>
+  <div class="chart-row">
+    <div>
+      <h3 class="sub">Secondary aggregate share by archetype</h3>
+      <div id="chart-secondary" class="chart"></div>
+    </div>
+    <div>
+      <h3 class="sub">Backfilling share vs primary aggregate extraction</h3>
+      <div id="chart-extraction" class="chart"></div>
+    </div>
+  </div>
+  <p class="note">Recycled mineral CDW supplied 8% of EU27 aggregates in 2022 (7% in
+     2010). The median secondary share is 7% in recycling led countries and 1% in
+     backfilling led countries (Kruskal Wallis p = .02); extraction per capita correlates
+     with the backfilling share (Spearman .37). One point per country, 29 countries with
+     material flow accounts.</p>
+</section>
+
+<section class="view" id="view-instruments">
+  <h2>National instruments</h2>
+  <p class="lede">Six coded instruments (landfill tax in 23 of 30 countries, sorting
+     obligation 12, recycled aggregate regulation 9, pre demolition audit 7, CDW landfill
+     restriction 7, aggregates levy 3) do not separate recycling led from backfilling led
+     countries once income and regulatory quality are held constant, across 432
+     specifications. The median recycling share is lower, not higher, in countries that
+     have each instrument. Within countries, the record reads differently: the five
+     landfill taxes introduced between 2011 and 2019 coincided with landfill falling by
+     33 points and material moving to recycling.</p>
+  <h3 class="sub">Median recycling share with and without each instrument</h3>
+  <div id="chart-dumbbell" class="chart"></div>
+  <div class="chart-row">
+    <div>
+      <h3 class="sub">Recycling share vs 2021 landfill tax rate</h3>
+      <div id="chart-taxrate" class="chart"></div>
+    </div>
+    <div>
+      <h3 class="sub">Around the start of a landfill tax</h3>
+      <div id="chart-event" class="chart"></div>
+    </div>
+  </div>
+  <p class="note">Left: countries without a landfill tax in 2021 sit in the untaxed column.
+     Right: mean shares by wave relative to the first wave with a tax in force, for the
+     countries that switched during the panel (Bulgaria 2011, Hungary 2013, Greece 2014,
+     Lithuania 2016, Romania 2019); Portugal and Slovakia enter the later waves. Waves with
+     fewer than three countries are omitted; hover to see who contributes.</p>
+</section>
+
+<section class="view" id="view-world">
+  <h2>Europe in the world</h2>
+  <p class="lede">Only 89 of the 217 countries in the World Bank What a Waste 3.0 database
+     report a CDW tonnage. China, the United States and Germany account for 77% of the
+     reported 5.5 Gt. Per capita CDW rises steeply with income (elasticity to GDP per
+     capita 2.25). Bubble area is national tonnage; colour is World Bank region.</p>
+  <div id="chart-world" class="chart tall"></div>
+  <p class="note">Viet Nam is in the database but its CDW field is blank, so it does not
+     appear. Reported definitions differ between countries; the European figures here are
+     the database entries, not the Eurostat W121 series used elsewhere on this site.</p>
+</section>
+
+<section class="view" id="view-profile">
+  <h2>Country profile</h2>
+  <p class="lede">Pick a country and, optionally, a comparison country. The cards show the
+     archetype, the 2022 recovery mix, ranks among the 30 countries, tonnage intensities,
+     the secondary aggregate share, instruments in force and regulatory quality.</p>
+  <div class="tool-grid">
+    <div>
+      <label for="profile-a">Country</label>
+      <select id="profile-a"></select>
+      <div id="profile-card-a" class="profile-card"></div>
+    </div>
+    <div>
+      <label for="profile-b">Comparison country</label>
+      <select id="profile-b"></select>
+      <div id="profile-card-b" class="profile-card"></div>
+    </div>
+    <div id="profile-chart-wrap">
+      <h3 class="sub">Recovery rate and recycling share, both countries among the 30</h3>
+      <div id="chart-profile" class="chart"></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  Companion to Nguyen et al. (2026), Journal of Building Engineering. Data: Eurostat
+  env_wastrt, env_wasgen, env_ac_mfa, sbs, cens_21dwop_r3; World Bank What a Waste 3.0 and
+  WGI; CEWEP landfill tax overview 2021; hand coded national instrument table. Estimates are
+  associations in a cross section of 30 countries, not causal effects.
+</footer>
+
+<script src="js/charts.js"></script>
+<script src="js/map.js"></script>
+<script src="js/profile.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

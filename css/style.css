@@ -183,3 +183,11 @@ section h3.sub { font-size: 1.05rem; margin: 1.6rem 0 .5rem; color: var(--ink); 
   #topnav a { padding: .7rem .55rem .55rem; font-size: .84rem; }
   .chart.xtall { height: 640px; }
 }
+
+/* data and code view */
+.table-wrap { overflow-x: auto; }
+.data-table { border-collapse: collapse; width: 100%; font-size: .86rem; }
+.data-table th, .data-table td { text-align: left; vertical-align: top; padding: .5rem .6rem; border-bottom: 1px solid var(--grid); }
+.data-table th { color: var(--ink2); font-weight: 600; border-bottom: 1px solid var(--rule); }
+.data-table td:nth-child(2) { white-space: nowrap; color: var(--ink2); }
+.data-table a { color: var(--petrol); word-break: break-all; }

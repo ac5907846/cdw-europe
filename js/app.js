@@ -43,6 +43,7 @@ function initMix() {
 /* view name -> lazy initializer returning the charts it created */
 const INIT = {
   overview: () => { heroStats(); return []; },
+  data: () => [],
   map: () => [buildMap(DATA, DATA.geojson)],
   mix: () => initMix(),
   trend: () => [chartEU27(DATA, "chart-eu27"), chartSigma(DATA, "chart-sigma")],

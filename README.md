@@ -2,7 +2,8 @@
 
 Interactive companion to "Beyond the Recovery Rate: Recycling, Backfilling and the
 Quality of Construction and Demolition Waste Recovery across Europe" (Journal of
-Building Engineering). Planned domain: **cdw.electriai.com**.
+Building Engineering). Domain: **cdw.electriai.com**. Analysis code and data:
+https://doi.org/10.5281/zenodo.22563996.
 
 Static site: one HTML page, vanilla JavaScript, ECharts 5.4.3 from cdnjs, hash
 router with lazy chart initialization. No framework, no build step, no
@@ -11,8 +12,8 @@ node_modules. Same architecture as the Paper 1 app (epr.electriai.com).
 ## Layout
 
 ```
-index.html          the eight views (overview, map, mix, trend, construction,
-                    instruments, world, profile)
+index.html          the nine views (overview, map, mix, trend, construction,
+                    instruments, world, data, profile)
 css/style.css       layout and the pathway / archetype colour tokens
 js/charts.js        shared helpers (fmt, colours) and all chart builders
 js/map.js           Europe choropleth and the country card

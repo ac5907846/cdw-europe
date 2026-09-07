@@ -20,6 +20,7 @@
     <a href="#construction" data-view="construction">Construction system</a>
     <a href="#instruments" data-view="instruments">Instruments</a>
     <a href="#world" data-view="world">World</a>
+    <a href="#data" data-view="data">Data and code</a>
     <a href="#profile" data-view="profile" class="cta">Country profile</a>
   </div>
 </nav>
@@ -65,6 +66,11 @@
       <h3>Europe in the world</h3>
       <p>Only 89 of 217 countries report a CDW tonnage, and three of them account for 77%
          of the reported 5.5 Gt.</p>
+    </a>
+    <a class="finding" href="#data">
+      <h3>Data and code</h3>
+      <p>Every dataset behind the site with its Eurostat or World Bank code, and the
+         archived analysis code and inputs on Zenodo.</p>
     </a>
     <a class="finding" href="#profile">
       <h3>Country profile</h3>
@@ -200,6 +206,41 @@
   <p class="note">Viet Nam is in the database but its CDW field is blank, so it does not
      appear. Reported definitions differ between countries; the European figures here are
      the database entries, not the Eurostat W121 series used elsewhere on this site.</p>
+</section>
+
+<section class="view" id="view-data">
+  <h2>Data and code</h2>
+  <p class="lede">All inputs are public. Waste quantities are Eurostat reference years 2010 to 2022
+     at two-year intervals; the site uses the 30 countries that treat more than 100 kt of mineral
+     construction and demolition waste. The analysis code, the coded instrument table and the
+     assembled raw inputs are archived at
+     <a href="https://doi.org/10.5281/zenodo.22563996" target="_blank" rel="noopener">doi.org/10.5281/zenodo.22563996</a>
+     (the record is versioned; this link always resolves to the latest version).</p>
+  <div class="table-wrap">
+    <table class="data-table">
+      <thead><tr><th>Dataset</th><th>Provider and code</th><th>Used for</th><th>Source</th></tr></thead>
+      <tbody>
+      <tr><td>Treatment of waste by operation, mineral CDW (W121)</td><td>Eurostat env_wastrt</td><td>Recovery rate, recycling, backfilling and disposal shares, treated tonnage</td><td><a href="https://ec.europa.eu/eurostat/databrowser/view/env_wastrt/default/table" target="_blank" rel="noopener">ec.europa.eu/eurostat/databrowser/view/env_wastrt/default/table</a></td></tr>
+      <tr><td>Generation of waste by NACE activity and material</td><td>Eurostat env_wasgen</td><td>Construction sector waste by material (mineral, soils, wood, plastics, glass, mixed)</td><td><a href="https://ec.europa.eu/eurostat/databrowser/view/env_wasgen/default/table" target="_blank" rel="noopener">ec.europa.eu/eurostat/databrowser/view/env_wasgen/default/table</a></td></tr>
+      <tr><td>Production in construction, volume index</td><td>Eurostat sts_copr_a</td><td>Construction cycle analyses</td><td><a href="https://ec.europa.eu/eurostat/databrowser/view/sts_copr_a/default/table" target="_blank" rel="noopener">ec.europa.eu/eurostat/databrowser/view/sts_copr_a/default/table</a></td></tr>
+      <tr><td>Building permits, useful floor area</td><td>Eurostat sts_cobp_a</td><td>Alternative activity measure</td><td><a href="https://ec.europa.eu/eurostat/databrowser/view/sts_cobp_a/default/table" target="_blank" rel="noopener">ec.europa.eu/eurostat/databrowser/view/sts_cobp_a/default/table</a></td></tr>
+      <tr><td>Gross value added, NACE F</td><td>Eurostat nama_10_a64</td><td>Normalisation by construction output, elasticity</td><td><a href="https://ec.europa.eu/eurostat/databrowser/view/nama_10_a64/default/table" target="_blank" rel="noopener">ec.europa.eu/eurostat/databrowser/view/nama_10_a64/default/table</a></td></tr>
+      <tr><td>GDP and GDP per capita</td><td>Eurostat nama_10_gdp</td><td>Income control</td><td><a href="https://ec.europa.eu/eurostat/databrowser/view/nama_10_gdp/default/table" target="_blank" rel="noopener">ec.europa.eu/eurostat/databrowser/view/nama_10_gdp/default/table</a></td></tr>
+      <tr><td>Population on 1 January</td><td>Eurostat demo_pjan</td><td>Per capita intensities</td><td><a href="https://ec.europa.eu/eurostat/databrowser/view/demo_pjan/default/table" target="_blank" rel="noopener">ec.europa.eu/eurostat/databrowser/view/demo_pjan/default/table</a></td></tr>
+      <tr><td>Structural business statistics, turnover of NACE F41, F42, F43</td><td>Eurostat sbs_na_con_r2, sbs_ovw_act</td><td>Civil engineering share of construction</td><td><a href="https://ec.europa.eu/eurostat/databrowser/view/sbs_ovw_act/default/table" target="_blank" rel="noopener">ec.europa.eu/eurostat/databrowser/view/sbs_ovw_act/default/table</a></td></tr>
+      <tr><td>Census 2021, dwellings by period of construction</td><td>Eurostat cens_21dwop_r3</td><td>Building stock age</td><td><a href="https://ec.europa.eu/eurostat/databrowser/view/cens_21dwop_r3/default/table" target="_blank" rel="noopener">ec.europa.eu/eurostat/databrowser/view/cens_21dwop_r3/default/table</a></td></tr>
+      <tr><td>Material flow accounts, domestic extraction of non-metallic minerals</td><td>Eurostat env_ac_mfa</td><td>Primary aggregate extraction, secondary aggregate share</td><td><a href="https://ec.europa.eu/eurostat/databrowser/view/env_ac_mfa/default/table" target="_blank" rel="noopener">ec.europa.eu/eurostat/databrowser/view/env_ac_mfa/default/table</a></td></tr>
+      <tr><td>GDP per capita, PPP (constant 2021 international $)</td><td>World Bank WDI NY.GDP.PCAP.PP.KD</td><td>Global comparison</td><td><a href="https://data.worldbank.org/indicator/NY.GDP.PCAP.PP.KD" target="_blank" rel="noopener">data.worldbank.org/indicator/NY.GDP.PCAP.PP.KD</a></td></tr>
+      <tr><td>Worldwide Governance Indicators</td><td>World Bank WGI</td><td>Regulatory quality and governance mean</td><td><a href="https://www.worldbank.org/en/publication/worldwide-governance-indicators" target="_blank" rel="noopener">www.worldbank.org/en/publication/worldwide-governance-indicators</a></td></tr>
+      <tr><td>What a Waste 3.0, country dataset</td><td>World Bank Data Catalog 0039597</td><td>CDW generation for 89 countries</td><td><a href="https://datacatalog.worldbank.org/search/dataset/0039597" target="_blank" rel="noopener">datacatalog.worldbank.org/search/dataset/0039597</a></td></tr>
+      <tr><td>Landfill taxes and restrictions overview 2021</td><td>CEWEP</td><td>Landfill tax presence, rate and start year, restrictions</td><td><a href="https://www.cewep.eu/landfill-taxes-and-bans/" target="_blank" rel="noopener">www.cewep.eu/landfill-taxes-and-bans/</a></td></tr>
+      <tr><td>National instrument table</td><td>Coded by the authors from national legislation, the EC CDW protocol and the EEA briefing</td><td>Pre-demolition audits, sorting obligations, recycled aggregate regulations, aggregates levies, EPR</td><td><a href="https://doi.org/10.5281/zenodo.22563996" target="_blank" rel="noopener">doi.org/10.5281/zenodo.22563996</a></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note">Eurostat operation codes: RCV_R recycling, RCV_B backfilling, RCV_R_B both (the
+     70% target basis), DSP_L landfill. Backfilling for the EU27 aggregate is not published before
+     2014 and is inferred as recovery minus recycling.</p>
 </section>
 
 <section class="view" id="view-profile">
